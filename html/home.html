@@ -1,0 +1,396 @@
+{% extends 'base.html' %}
+{% block content %}        
+<section class="relative bg-cover bg-center min-h-[70vh] flex items-center justify-center text-center overflow-hidden"
+            style="background-image: url('https://via.placeholder.com/1920x1080/4f46e5/ffffff?text=Vibrant+Church+Community');">
+            <div class="absolute inset-0 bg-black opacity-60"></div>
+            <div class="relative z-10 text-white px-4 py-20 animate-fade-in-up">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight mb-6 drop-shadow-lg">
+                    Find Your Place at <span class="text-indigo-200">Jesus Restoration Center(JRC)</span>
+                </h1>
+                <p class="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto drop-shadow animate-fade-in-up delay-200">
+                    A community of faith, hope, and love in Mwanza, dedicated to transforming lives.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up delay-400">
+                    <a href="/sermons" class="inline-block bg-indigo-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300 ease-in-out shadow-xl">
+                        Watch Latest Sermon
+                    </a>
+                    <a href="/contact" class="inline-block border-2 border-white text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-700 transition duration-300 ease-in-out shadow-xl">
+                        Plan Your Visit
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div class="text-left animate-fade-in-up">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">Welcome to Our Family</h2>
+                    <p class="text-lg leading-relaxed mb-6">
+                        At **Jesus Restoration Center(JRC)**, we believe in creating a welcoming and inclusive space for everyone to grow in their faith journey. Whether you're new to church, exploring Christianity, or looking for a community to call home, you are welcome here.
+                    </p>
+                    <p class="text-lg leading-relaxed mb-8">
+                        We are passionate about living out God's love, serving our city, and sharing the message of hope. Join us this Sunday and experience a vibrant community rooted in faith and fellowship.
+                    </p>
+                    <a href="/about" class="inline-block bg-gray-200 dark:bg-gray-700 text-indigo-700 dark:text-indigo-300 py-3 px-6 rounded-full font-semibold hover:bg-indigo-100 dark:hover:bg-gray-600 transition duration-300">
+                        Learn More About Us & Our Story →
+                    </a>
+                </div>
+                <div class="animate-fade-in-up delay-200">
+                    <img src="https://via.placeholder.com/600x400/a78bfa/ffffff?text=Church+Interior" alt="Church Community" class="rounded-lg shadow-xl w-full h-auto object-cover">
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">What We Believe & Live By</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">
+                    Our foundation is built on timeless truths that guide our actions and inspire our community.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 animate-fade-in-up">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">📖</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-indigo-700 dark:text-indigo-400">Word-Centered</h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            We believe the Bible is God's inspired word, guiding us in all aspects of life.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-100">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">🤲</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-indigo-700 dark:text-indigo-400">Spirit-Led Worship</h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Our worship is a vibrant expression of gratitude and adoration, empowered by the Holy Spirit.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-200">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">🫂</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-indigo-700 dark:text-indigo-400">Community & Fellowship</h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            We are a family, growing together in love, support, and genuine relationships.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-300">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">🌍</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-indigo-700 dark:text-indigo-400">Outreach & Service</h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            We are committed to serving our local and global communities with compassion.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-400">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">🌱</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-indigo-700 dark:text-indigo-400">Spiritual Growth</h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            Through discipleship and teaching, we empower individuals to deepen their faith.
+                        </p>
+                    </div>
+                    <div class="p-8 bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-xl transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-500">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">🎁</div>
+                        <h3 class="text-2xl font-semibold mb-3 text-indigo-700 dark:text-indigo-400">Generosity</h3>
+                        <p class="text-gray-700 dark:text-gray-300">
+                            We foster a culture of giving, sharing our time, talents, and resources.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">Discover Our Ministries</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">
+                    Explore the various ways we serve and connect within our church family.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <a href="/childrens-ministry" class="block p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 group animate-fade-in-up">
+                        <img src="https://via.placeholder.com/100x100/9ca3af/ffffff?text=Kids" alt="Children's Ministry" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200 dark:border-indigo-500 group-hover:border-indigo-600 transition">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700 dark:text-indigo-400 group-hover:text-indigo-800 dark:group-hover:text-indigo-300">Children's Ministry</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">Nurturing young hearts in faith.</p>
+                    </a>
+                    <a href="/youth-ministry" class="block p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 group animate-fade-in-up delay-100">
+                        <img src="https://via.placeholder.com/100x100/6b7280/ffffff?text=Youth" alt="Youth Ministry" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200 dark:border-indigo-500 group-hover:border-indigo-600 transition">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700 dark:text-indigo-400 group-hover:text-indigo-800 dark:group-hover:text-indigo-300">Youth Ministry</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">Empowering the next generation.</p>
+                    </a>
+                    <a href="/womens-ministry" class="block p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 group animate-fade-in-up delay-200">
+                        <img src="https://via.placeholder.com/100x100/9ca3af/ffffff?text=Women" alt="Women's Ministry" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200 dark:border-indigo-500 group-hover:border-indigo-600 transition">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700 dark:text-indigo-400 group-hover:text-indigo-800 dark:group-hover:text-indigo-300">Women's Ministry</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">Connecting women for growth.</p>
+                    </a>
+                    <a href="/mens-ministry" class="block p-6 bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:scale-105 group animate-fade-in-up delay-300">
+                        <img src="https://via.placeholder.com/100x100/6b7280/ffffff?text=Men" alt="Men's Ministry" class="w-24 h-24 rounded-full mx-auto mb-4 object-cover border-4 border-indigo-200 dark:border-indigo-500 group-hover:border-indigo-600 transition">
+                        <h3 class="text-xl font-semibold mb-2 text-indigo-700 dark:text-indigo-400 group-hover:text-indigo-800 dark:group-hover:text-indigo-300">Men's Ministry</h3>
+                        <p class="text-gray-700 dark:text-gray-300 text-sm">Building strong men of faith.</p>
+                    </a>
+                </div>
+                <div class="mt-12">
+                    <a href="/ministries" class="inline-block border-2 border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400 py-3 px-8 rounded-full text-lg font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900 transition duration-300 ease-in-out">
+                        View All Ministries
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">Don't Miss Our Upcoming Events</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">
+                    Mark your calendars and join us for fellowship, learning, and celebration!
+                </p>
+                <div id="events-container"
+                     hx-get="/api/upcoming-events"
+                     hx-trigger="load, every 30s"
+                     hx-swap="innerHTML"
+                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up">
+                        <img src="https://via.placeholder.com/400x250/6366f1/ffffff?text=Event+Image" alt="Event Name" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Community Prayer Night</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Friday, June 7th, 2025 | 7:00 PM</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Join us for an evening of prayer and reflection, seeking guidance and strength together.</p>
+                            <a href="/events/prayer-night" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-100">
+                        <img src="https://via.placeholder.com/400x250/f97316/ffffff?text=Youth+Group" alt="Event Name" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Youth Summer Camp</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">July 15-19, 2025 | Church Grounds</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">A week of fun, fellowship, and spiritual growth for our youth. Sign up now!</p>
+                            <a href="/events/youth-camp" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-200">
+                        <img src="https://via.placeholder.com/400x250/22c55e/ffffff?text=Community+Service" alt="Event Name" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Community Outreach Day</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Saturday, June 22nd, 2025 | 9:00 AM</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Join us as we serve our local community through various projects.</p>
+                            <a href="/events/outreach" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <a href="/events" class="inline-block border-2 border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400 py-3 px-8 rounded-full text-lg font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900 transition duration-300 ease-in-out">
+                        View All Events
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">Dive Deeper: Our Latest Sermons</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">
+                    Listen to powerful messages that inspire, challenge, and encourage your walk with Christ.
+                </p>
+                <div id="sermons-container"
+                     hx-get="/api/recent-sermons"
+                     hx-trigger="load, every 60s"
+                     hx-swap="innerHTML"
+                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up">
+                        <img src="https://via.placeholder.com/400x250/4f46e5/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">The Power of Forgiveness</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 26, 2025</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">A powerful message on understanding and embracing the liberating power of forgiveness in our lives, inspired by biblical teachings.</p>
+                            <a href="/sermons/power-of-forgiveness" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-100">
+                        <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Living a Life of Purpose</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Guest Speaker Pastor Janet mukabwa | May 19, 2025</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">Explore how to identify and live out your unique purpose, aligning your daily actions with God's calling.</p>
+                            <a href="/sermons/life-of-purpose" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-200">
+                        <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Faith in Challenging Times</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 12, 2025</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">A comforting message on how to maintain unwavering faith and find peace amidst life's trials and tribulations.</p>
+                            <a href="/sermons/faith-in-challenge" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <a href="/sermons" class="inline-block border-2 border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400 py-3 px-8 rounded-full text-lg font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900 transition duration-300 ease-in-out">
+                        View All Sermons
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-indigo-700 dark:bg-indigo-900 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">Hear From Our Community</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">
+                    Real stories of faith, transformation, and belonging from members of Jesus Restoration Center(JRC).
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-indigo-800 dark:bg-indigo-700 p-8 rounded-lg shadow-xl animate-fade-in-up">
+                        <p class="text-xl italic mb-6">
+                            "Coming to Jesus Restoration Center(JRC) was like finding my true home. The warmth, the genuine fellowship, and the powerful messages have truly transformed my life."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <img src="https://via.placeholder.com/80x80/ffffff/000000?text=Jane+D." alt="Testimonial User" class="w-16 h-16 rounded-full mr-4 object-cover">
+                            <p class="font-semibold text-lg">Jane Doe, Member Since 2022</p>
+                        </div>
+                    </div>
+                    <div class="bg-indigo-800 dark:bg-indigo-700 p-8 rounded-lg shadow-xl animate-fade-in-up delay-100">
+                        <p class="text-xl italic mb-6">
+                            "I've never felt so connected to a church. The focus on community outreach truly resonates with my heart for service. It's more than just a church; it's a family."
+                        </p>
+                        <div class="flex items-center justify-center">
+                            <img src="https://via.placeholder.com/80x80/ffffff/000000?text=John+S." alt="Testimonial User" class="w-16 h-16 rounded-full mr-4 object-cover">
+                            <p class="font-semibold text-lg">John Smith, Volunteer Leader</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <a href="/stories" class="inline-block border-2 border-white text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-700 transition duration-300 ease-in-out">
+                        Read More Stories
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">Ready to Connect? Get Involved!</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">
+                    There are countless ways to become part of our church family and grow in your spiritual journey.
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-fade-in-up">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">📅</div>
+                        <h3 class="text-xl font-semibold mb-2">Visit Our Service</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Join us for worship every Sunday. All are welcome!</p>
+                        <a href="/contact" class="inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold">Service Times & Map →</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-100">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">🙏</div>
+                        <h3 class="text-xl font-semibold mb-2">Submit a Prayer Request</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Let our prayer team lift up your needs to God.</p>
+                        <a href="/prayer" class="inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold">Request Prayer →</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-200">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">💖</div>
+                        <h3 class="text-xl font-semibold mb-2">Online Giving</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Support our mission through secure online giving.</p>
+                        <a href="/give" class="inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold">Give Now →</a>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 transform hover:-translate-y-1 animate-fade-in-up delay-300">
+                        <div class="text-indigo-600 dark:text-indigo-400 text-5xl mb-4">🤝</div>
+                        <h3 class="text-xl font-semibold mb-2">Volunteer with Us</h3>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4">Serve God and others using your unique gifts.</p>
+                        <a href="/volunteer" class="inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold">Explore Opportunities →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">Latest News & Updates</h2>
+                <p class="text-lg max-w-3xl mx-auto mb-12">
+                    Stay informed about what's happening at Jesus Restoration Center(JRC) and beyond.
+                </p>
+                <div id="news-container"
+                     hx-get="/api/latest-news"
+                     hx-trigger="load, every 120s"
+                     hx-swap="innerHTML"
+                     class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden animate-fade-in-up">
+                        <img src="https://via.placeholder.com/400x250/60a5fa/ffffff?text=News+Image" alt="News Title" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Children's Ministry Fundraiser Success!</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2 text-sm">May 20, 2025</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">Thank you to everyone who contributed to our recent Children's Ministry fundraiser. Your generosity made a huge impact!</p>
+                            <a href="/news/fundraiser-success" class="inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold">Read More →</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden animate-fade-in-up delay-100">
+                        <img src="https://via.placeholder.com/400x250/fde047/000000?text=News+Image" alt="News Title" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">New Bible Study Series Starting Soon</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2 text-sm">May 15, 2025</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">Join us for our exciting new Bible study series on the Book of James, starting next Tuesday!</p>
+                            <a href="/news/new-bible-study" class="inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold">Find Out More →</a>
+                        </div>
+                    </div>
+                    <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden animate-fade-in-up delay-200">
+                        <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=News+Image" alt="News Title" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Volunteer Spotlight: Sister Sarah</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2 text-sm">May 10, 2025</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">We celebrate Sister Sarah for her incredible dedication to our community outreach programs!</p>
+                            <a href="/news/volunteer-spotlight-sarah" class="inline-block text-indigo-600 dark:text-indigo-400 hover:text-indigo-800 dark:hover:text-indigo-300 font-semibold">Read Her Story →</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <a href="/articles" class="inline-block border-2 border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400 py-3 px-8 rounded-full text-lg font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900 transition duration-300 ease-in-out">
+                        View All News & Articles
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="py-16 bg-gradient-to-r from-indigo-600 to-indigo-800 dark:from-indigo-800 dark:to-indigo-950 text-white">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-8">A Special Message from Our Pastor</h2>
+                <div class="max-w-4xl mx-auto bg-white bg-opacity-20 dark:bg-opacity-10 rounded-lg p-8 shadow-xl animate-fade-in-up">
+                    <img src="https://via.placeholder.com/150x150/ffffff/000000?text=Pastor+Image" alt="Pastor George Mukabwa" class="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-white object-cover">
+                    <p class="text-xl italic mb-6 text-gray-800">
+                        "As Pastor of Jesus Restoration Center(JRC), my greatest joy is seeing lives transformed by the love of Christ. We invite you to join us on this incredible journey of faith, where you'll find true purpose, meaningful connections, and a place to belong. We can't wait to meet you!"
+                    </p>
+                    <p class="font-bold text-xl">- Pastor George Mukabwa</p>
+                    <p class="text-sm">Lead Pastor, Jesus Restoration Center(JRC)</p>
+                </div>
+                <div class="mt-12">
+                    <a href="/leadership" class="inline-block border-2 border-white text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-white hover:text-indigo-700 transition duration-300 ease-in-out">
+                        Meet Our Leadership Team
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section class="bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-gray-200 py-16 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">Your Journey of Faith Starts Here</h2>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto mb-8">
+                    We are excited to welcome you to Jesus Restoration Center(JRC). Experience inspiring worship, relevant teaching, and a warm community.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="/contact" class="inline-block bg-indigo-600 text-white py-3 px-8 rounded-full text-lg font-semibold hover:bg-indigo-700 transition duration-300 ease-in-out shadow-lg">
+                        Plan My First Visit
+                    </a>
+                    <a href="/give" class="inline-block border-2 border-indigo-600 text-indigo-600 dark:border-indigo-400 dark:text-indigo-400 py-3 px-8 rounded-full text-lg font-semibold hover:bg-indigo-600 hover:text-white dark:hover:bg-indigo-400 dark:hover:text-gray-900 transition duration-300 ease-in-out">
+                        Support Our Mission
+                    </a>
+                </div>
+            </div>
+        </section>
+          {% endblock content %}

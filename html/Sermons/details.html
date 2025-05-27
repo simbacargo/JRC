@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermons Archive - Jesus Restoration Center(JRC)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Optional: Custom scrollbar for a smoother look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Dark mode scrollbar */
+        .dark ::-webkit-scrollbar-track {
+            background: #333;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+        /* Fade-in animation for HTMX content */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Styles for list view */
+        .sermon-list-view .sermon-card {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+        }
+        .sermon-list-view .sermon-card img {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            margin-right: 1rem;
+            border-radius: 0.5rem;
+        }
+        .sermon-list-view .sermon-card .sermon-content {
+            flex-grow: 1;
+        }
+        .sermon-list-view .sermon-card .sermon-description {
+            display: none; /* Hide description in list view */
+        }
+        .sermon-list-view .sermon-card .sermon-actions {
+            margin-left: 1rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-white dark:bg-gray-900 shadow-md dark:shadow-none">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex-shrink-0">
+                <a href="/" class="text-xl font-bold text-indigo-700 dark:text-indigo-500 tracking-tight">Jesus Restoration Center(JRC)</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="/about" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">About Us</a>
+                <a href="/ministries" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Ministries</a>
+                <a href="/sermons" class="text-indigo-700 dark:text-indigo-400 font-semibold transition duration-150 ease-in-out">Sermons</a>
+                <a href="/events" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Events</a>
+                <a href="/contact" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Contact</a>
+                <a href="/give" class="bg-indigo-600 text-white dark:bg-indigo-500 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-indigo-700 dark:hover:bg-indigo-400 transition duration-150 ease-in-out">Give</a>
+                <button class="focus:outline-none ml-4 theme-toggle-emoji">
+                    ☀️
+                </button>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="focus:outline-none mr-4 theme-toggle-emoji">
+                    ☀️
+                </button>
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="h-6 w-6 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden dark:bg-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/about" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">About Us</a>
+                <a href="/ministries" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Ministries</a>
+                <a href="/sermons" class="block bg-indigo-100 dark:bg-indigo-700 text-indigo-700 dark:text-indigo-300 py-2 px-3 rounded-md text-base font-medium">Sermons</a>
+                <a href="/events" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Events</a>
+                <a href="/contact" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Contact</a>
+                <a href="/give" class="block bg-indigo-600 dark:bg-indigo-500 text-white dark:text-gray-900 py-2 px-3 rounded-md text-base font-medium hover:bg-indigo-700 dark:hover:bg-indigo-400 transition duration-150 ease-in-out">Give</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-indigo-700 dark:bg-indigo-900 text-white py-20 text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">Sermons Archive</h1>
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto">
+                    Dive into our comprehensive collection of inspiring messages, teachings, and biblical insights.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4">
+                <form id="sermon-filter-form" hx-get="/api/sermons" hx-target="#sermon-list" hx-indicator="#sermon-loading-indicator" hx-swap="innerHTML transition:true">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                        <div>
+                            <label for="search-sermons" class="sr-only">Search Sermons</label>
+                            <input type="search" id="search-sermons" name="search" placeholder="Search by title, speaker, or keyword..."
+                                   class="w-full p-3 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500
+                                          bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                   hx-trigger="keyup changed delay:500ms, search">
+                        </div>
+
+                        <select id="filter-series" name="series"
+                                class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                hx-trigger="change">
+                            <option value="">All Series</option>
+                            <option value="Living in Grace">Living in Grace</option>
+                            <option value="Foundations of Faith">Foundations of Faith</option>
+                            <option value="Psalms of Hope">Psalms of Hope</option>
+                            <option value="Book of John">Book of John</option>
+                            <option value="Proverbs for Life">Proverbs for Life</option>
+                        </select>
+                        <select id="filter-speaker" name="speaker"
+                                class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                hx-trigger="change">
+                            <option value="">All Speakers</option>
+                            <option value="Pastor George Mukabwa">Pastor George Mukabwa</option>
+                            <option value="Guest Speaker Pastor Janet mukabwa">Guest Speaker Pastor Janet mukabwa</option>
+                            <option value="Elder Pastor Benson Lwack">Elder Pastor Benson Lwack</option>
+                            <option value="Deaconess Alice Brown">Deaconess Alice Brown</option>
+                        </select>
+                        <select id="filter-topic" name="topic"
+                                class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                hx-trigger="change">
+                            <option value="">All Topics</option>
+                            <option value="Forgiveness">Forgiveness</option>
+                            <option value="Purpose">Purpose</option>
+                            <option value="Faith">Faith</option>
+                            <option value="Love">Love</option>
+                            <option value="Hope">Hope</option>
+                            <option value="Community">Community</option>
+                            <option value="Prayer">Prayer</option>
+                            <option value="Discipleship">Discipleship</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                        <div class="flex flex-wrap gap-4">
+                            <select id="filter-year" name="year"
+                                    class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                    hx-trigger="change">
+                                <option value="">All Years</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                            </select>
+
+                            <select id="sort-by" name="sort"
+                                    class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                    hx-trigger="change">
+                                <option value="date_desc">Newest First</option>
+                                <option value="date_asc">Oldest First</option>
+                                <option value="title_asc">Title (A-Z)</option>
+                                <option value="title_desc">Title (Z-A)</option>
+                                <option value="speaker_asc">Speaker (A-Z)</option>
+                            </select>
+
+                            <button type="button" class="bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 py-3 px-6 rounded-md hover:bg-gray-400 dark:hover:bg-gray-500 transition duration-300"
+                                    onclick="clearSermonFilters()">
+                                Clear Filters
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-gray-700 dark:text-gray-300">View:</span>
+                            <button type="button" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+                                    onclick="setView('grid')" id="grid-view-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                </svg>
+                            </button>
+                            <button type="button" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+                                    onclick="setView('list')" id="list-view-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="sermon-loading-indicator" class="htmx-indicator text-center text-indigo-600 dark:text-indigo-400 text-lg mb-4">
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="animate-spin h-5 w-5 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Loading sermons...</span>
+                    </div>
+                </div>
+
+                <div id="sermon-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                     hx-get="/api/sermons"
+                     hx-trigger="load"
+                     hx-swap="innerHTML transition:true">
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 fade-in sermon-card">
+                        <img src="https://via.placeholder.com/400x250/4f46e5/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6 sermon-content">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">The Power of Forgiveness</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 26, 2025</p>
+                            <p class="text-indigo-500 text-sm font-medium mb-3">Series: Living in Grace | Topic: Forgiveness</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 sermon-description">A powerful message on understanding and embracing the liberating power of forgiveness in our lives, inspired by biblical teachings.</p>
+                            <div class="sermon-actions">
+                                <a href="/sermons/the-power-of-forgiveness" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 fade-in sermon-card">
+                        <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6 sermon-content">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Living a Life of Purpose</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Guest Speaker Pastor Janet mukabwa | May 19, 2025</p>
+                            <p class="text-indigo-500 text-sm font-medium mb-3">Series: Foundations of Faith | Topic: Purpose</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 sermon-description">Explore how to identify and live out your unique purpose, aligning your daily actions with God's calling.</p>
+                            <div class="sermon-actions">
+                                <a href="/sermons/living-a-life-of-purpose" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 fade-in sermon-card">
+                        <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6 sermon-content">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Faith in Challenging Times</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 12, 2025</p>
+                            <p class="text-indigo-500 text-sm font-medium mb-3">Series: Psalms of Hope | Topic: Faith</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 sermon-description">A comforting message on how to maintain unwavering faith and find peace amidst life's trials and tribulations.</p>
+                            <div class="sermon-actions">
+                                <a href="/sermons/faith-in-challenging-times" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center"
+                     hx-get="/api/sermons/pagination"
+                     hx-trigger="load"
+                     hx-swap="innerHTML">
+                    <nav class="flex justify-center items-center space-x-2">
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">&laquo; Previous</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-white bg-indigo-600 dark:bg-indigo-500">1</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">2</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">3</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">Next &raquo;</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-indigo-600 dark:bg-indigo-700 text-white py-12 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-4">Subscribe to Our Podcast!</h2>
+                <p class="text-lg mb-6 max-w-xl mx-auto">
+                    Take our sermons with you on the go. Available on all major podcast platforms.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="inline-block bg-white text-indigo-700 py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+                        Apple Podcasts
+                    </a>
+                    <a href="#" class="inline-block bg-white text-indigo-700 py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+                        Spotify
+                    </a>
+                    <a href="#" class="inline-block bg-white text-indigo-700 py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+                        Google Podcasts
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-100 text-gray-600 py-10 mt-16 dark:bg-gray-900 dark:text-gray-400">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Jesus Restoration Center(JRC). All rights reserved.</p>
+            <p class="mt-2">
+                <a href="/privacy" class="hover:text-indigo-500 dark:hover:text-indigo-300">Privacy Policy</a> |
+                <a href="/terms" class="hover:text-indigo-500 dark:hover:text-indigo-300">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggleEmoji = document.querySelectorAll('.theme-toggle-emoji');
+        const sermonFilterForm = document.getElementById('sermon-filter-form');
+        const sermonList = document.getElementById('sermon-list');
+        let currentView = localStorage.getItem('sermonView') || 'grid'; // Default to grid
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggleEmoji.forEach(button => button.textContent = '🌙');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeToggleEmoji.forEach(button => button.textContent = '☀️');
+            }
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        }
+
+        // Apply saved theme on page load
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (prefersDark) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+
+        // Add event listeners to both emoji buttons
+        themeToggleEmoji.forEach(button => {
+            button.addEventListener('click', toggleDarkMode);
+        });
+
+        // HTMX specific event listener for transition and view update
+        document.addEventListener('htmx:afterSwap', function(event) {
+            if (event.detail.target.id === 'sermon-list') {
+                event.detail.target.querySelectorAll('.fade-in').forEach((el, i) => {
+                    el.style.animationDelay = `${i * 0.05}s`; // Stagger animation
+                    el.style.animationPlayState = 'running';
+                });
+                applyView(currentView); // Reapply view after HTMX swap
+            }
+        });
+
+        // Function to clear all sermon filters
+        function clearSermonFilters() {
+            document.getElementById('search-sermons').value = '';
+            document.getElementById('filter-series').value = '';
+            document.getElementById('filter-speaker').value = '';
+            document.getElementById('filter-topic').value = '';
+            document.getElementById('filter-year').value = '';
+            document.getElementById('sort-by').value = 'date_desc'; // Reset sort to default
+            htmx.trigger(sermonFilterForm, 'submit'); // Trigger a new HTMX request to reload
+        }
+
+        // Function to apply grid or list view
+        function applyView(viewType) {
+            currentView = viewType;
+            localStorage.setItem('sermonView', viewType); // Save preference
+            if (viewType === 'list') {
+                sermonList.classList.add('sermon-list-view');
+                sermonList.classList.remove('grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3');
+                sermonList.classList.add('grid-cols-1'); // Ensure it's a single column for list
+                document.getElementById('list-view-btn').classList.add('bg-indigo-200', 'dark:bg-indigo-600');
+                document.getElementById('grid-view-btn').classList.remove('bg-indigo-200', 'dark:bg-indigo-600');
+            } else { // grid view
+                sermonList.classList.remove('sermon-list-view', 'grid-cols-1');
+                sermonList.classList.add('grid-cols-1', 'sm:grid-cols-2', 'lg:grid-cols-3');
+                document.getElementById('grid-view-btn').classList.add('bg-indigo-200', 'dark:bg-indigo-600');
+                document.getElementById('list-view-btn').classList.remove('bg-indigo-200', 'dark:bg-indigo-600');
+            }
+        }
+
+        // Initialize view on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            applyView(currentView);
+            // Trigger initial HTMX load for sermons
+            htmx.trigger(sermonFilterForm, 'submit');
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>

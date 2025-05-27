@@ -1,0 +1,19 @@
+    <div class="h-screen flex items-center justify-center bg-gray-100">
+  <div class="w-full max-w-md">
+    <div class="mb-2 text-gray-700 font-medium text-center">Loading...</div>
+    <div class="w-full bg-gray-200 rounded-full h-4 overflow-hidden">
+      <div class="bg-blue-500 h-full animate-progress-bar" style="width: 70%;"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @keyframes progress-bar {
+    0% { width: 0%; }
+    100% { width: 70%; }
+  }
+
+  .animate-progress-bar {
+    animation: progress-bar 2s ease-in-out forwards;
+  }
+</style>

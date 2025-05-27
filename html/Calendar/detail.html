@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youth Summer Hangout - Events - Jesus Restoration Center(JRC)</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+    <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Optional: Custom scrollbar for a smoother look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+        /* Dark mode scrollbar */
+        .dark ::-webkit-scrollbar-track {
+            background: #333;
+        }
+        .dark ::-webkit-scrollbar-thumb {
+            background: #666;
+        }
+        .dark ::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+        /* Animation for sections */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-500 { animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <header class="bg-white dark:bg-gray-900 shadow-md dark:shadow-none">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex-shrink-0">
+                <a href="/" class="text-xl font-bold text-indigo-700 dark:text-indigo-500 tracking-tight">Jesus Restoration Center(JRC)</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="/about" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">About Us</a>
+                <a href="/ministries" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Ministries</a>
+                <a href="/sermons" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Sermons</a>
+                <a href="/events" class="text-indigo-700 dark:text-indigo-400 font-semibold transition duration-150 ease-in-out">Events</a>
+                <a href="/contact" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Contact</a>
+                <a href="/give" class="bg-indigo-600 text-white dark:bg-indigo-500 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-indigo-700 dark:hover:bg-indigo-400 transition duration-150 ease-in-out">Give</a>
+                <button class="focus:outline-none ml-4 theme-toggle-emoji">
+                    ☀️
+                </button>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="focus:outline-none mr-4 theme-toggle-emoji">
+                    ☀️
+                </button>
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="h-6 w-6 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden dark:bg-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="/about" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">About Us</a>
+                <a href="/ministries" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Ministries</a>
+                <a href="/sermons" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Sermons</a>
+                <a href="/events" class="block bg-indigo-100 dark:bg-indigo-700 text-indigo-700 dark:text-indigo-300 py-2 px-3 rounded-md text-base font-medium">Events</a>
+                <a href="/contact" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Contact</a>
+                <a href="/give" class="block bg-indigo-600 dark:bg-indigo-500 text-white dark:text-gray-900 py-2 px-3 rounded-md text-base font-medium hover:bg-indigo-700 dark:hover:bg-indigo-400 transition duration-150 ease-in-out">Give</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="bg-indigo-700 dark:bg-indigo-900 text-white py-16 text-center">
+            <div class="container mx-auto px-4 animate-fade-in">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">Youth Summer Hangout</h1>
+                <p class="text-lg sm:text-xl max-w-3xl mx-auto">
+                    An evening of fun, games, and fellowship for all high school students!
+                </p>
+                <div class="mt-6">
+                    <a href="/events" class="inline-flex items-center text-white hover:text-indigo-200 transition duration-300">
+                        <svg class="h-5 w-5 me-2" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+                        Back to All Events
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-50 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4 grid grid-cols-1 lg:grid-cols-3 gap-10">
+                <div class="lg:col-span-2 order-2 lg:order-1 animate-fade-in delay-100">
+                    <img src="https://via.placeholder.com/900x500/6366f1/ffffff?text=Youth+Summer+Hangout" alt="Youth Summer Hangout" class="rounded-lg shadow-xl mb-6 w-full object-cover">
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md mb-6">
+                        <h2 class="text-3xl font-bold text-indigo-700 dark:text-indigo-400 mb-4">About This Event</h2>
+                        <p class="text-lg leading-relaxed mb-4">
+                            Get ready for an unforgettable evening designed just for high school students! Our Annual Youth Summer Hangout is the perfect opportunity to connect with friends, make new ones, and enjoy a vibrant atmosphere filled with fun and fellowship.
+                        </p>
+                        <p class="text-lg leading-relaxed mb-4">
+                            We'll have a range of exciting activities including:
+                        </p>
+                        <ul class="list-disc list-inside text-lg leading-relaxed mb-4 space-y-2">
+                            <li>Outdoor **games and sports** (volleyball, frisbee, giant Jenga)</li>
+                            <li>Delicious **snacks and refreshments** (pizza, soda, fruit)</li>
+                            <li>A **bonfire** with s'mores (weather permitting)</li>
+                            <li>Engaging **group discussions** on topics relevant to youth faith</li>
+                            <li>Live **music and worship** session</li>
+                            <li>Opportunities to simply **relax and chat** with peers and youth leaders</li>
+                        </ul>
+                        <p class="text-lg leading-relaxed">
+                            This event is open to all high school students (ages 14-18), whether you're a regular at our church or just looking for a cool place to hang out. We aim to provide a safe, welcoming, and inspiring environment where youth can grow in their faith and build lasting friendships. Don't miss out on the highlight of the summer!
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-700 p-8 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-indigo-700 dark:text-indigo-400 mb-4">Important Notes:</h3>
+                        <ul class="list-disc list-inside text-lg leading-relaxed space-y-2">
+                            <li>**What to Bring:** Comfortable clothes for outdoor activities, a water bottle, and a friend!</li>
+                            <li>**Safety:** Adult supervision will be provided at all times. First aid will be available on site.</li>
+                            <li>**Transportation:** Please arrange your own transportation to and from the church.</li>
+                            <li>**Dietary Restrictions:** If you have any allergies or dietary needs, please inform us on the registration form.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-1 order-1 lg:order-2 space-y-6 animate-fade-in delay-200">
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Event Details</h3>
+                        <div class="space-y-3 text-lg text-gray-700 dark:text-gray-300">
+                            <p class="flex items-center">
+                                <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"></path></svg>
+                                **Date:** Sunday, June 8, 2025
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l3 3a1 1 0 001.414-1.414L11 9.586V6z" clip-rule="evenodd"></path></svg>
+                                **Time:** 4:00 PM - 7:00 PM (EAT)
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"></path></svg>
+                                **Location:** Church Youth Hall & Outdoor Area<br>
+                                <span class="ms-9 text-sm text-gray-500 dark:text-gray-400">123 Faith Street, Mwanza, Tanzania</span>
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path d="M7 3a1 1 0 00-1 1v1a1 1 0 002 0V4a1 1 0 00-1-1zM11 3a1 1 0 00-1 1v1a1 1 0 002 0V4a1 1 0 00-1-1zM15 3a1 1 0 00-1 1v1a1 1 0 002 0V4a1 1 0 00-1-1zM2 4a2 2 0 00-2 2v2a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2H2zM2 11h16v3a2 2 0 01-2 2H4a2 2 0 01-2-2v-3z" clip-rule="evenodd" fill-rule="evenodd"></path></svg>
+                                **Category:** Fellowship
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                                **Audience:** Youth (Ages 14-18)
+                            </p>
+                            <p class="flex items-center">
+                                <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M4 4a2 2 0 00-2 2v4a2 2 0 002 2V6h10.586l2.707 2.707A1 1 0 0018 8v-2a2 2 0 00-2-2H4z" clip-rule="evenodd"></path></svg>
+                                **Cost:** Free
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Ready to Hangout?</h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-6">
+                            Secure your spot for a fantastic evening! Registration helps us plan for food and activities.
+                        </p>
+                        <a href="https://forms.gle/YOUR_REGISTRATION_FORM_LINK" target="_blank" class="block w-full bg-indigo-600 text-white text-xl font-bold py-4 px-6 rounded-full hover:bg-indigo-700 transition duration-300 shadow-lg transform hover:scale-105">
+                            Register Now!
+                        </a>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 mt-3">Registration closes: June 6, 2025</p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Questions? Contact Us!</h3>
+                        <p class="text-lg text-gray-700 dark:text-gray-300 mb-3">
+                            For any inquiries about the Youth Summer Hangout, please reach out to:
+                        </p>
+                        <div class="flex items-center text-lg text-gray-700 dark:text-gray-300 mb-2">
+                            <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path></svg>
+                            <span class="font-semibold">Mr. David Mussa</span> (Youth Pastor)
+                        </div>
+                        <p class="flex items-center text-lg text-gray-700 dark:text-gray-300 mb-2">
+                            <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.774a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.06-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"></path></svg>
+                            <a href="tel:+255712345678" class="hover:underline">+255 712 345 678</a>
+                        </p>
+                        <p class="flex items-center text-lg text-gray-700 dark:text-gray-300">
+                            <svg class="h-6 w-6 text-indigo-600 dark:text-indigo-400 me-3" fill="currentColor" viewBox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path><path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path></svg>
+                            <a href="mailto:youth@jrc.co.tz" class="hover:underline">youth@jrc.co.tz</a>
+                        </p>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-700 p-6 rounded-lg shadow-md text-center">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Share This Event</h3>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=YOUR_EVENT_URL" target="_blank" class="text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition duration-300">
+                                <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M22.001 0H2a2 2 0 00-2 2v20a2 2 0 002 2h20a2 2 0 002-2V2a2 2 0 00-2-2zM19 8h-2.5A.5.5 0 0016 8.5V11h3l-.5 3h-2.5v7h-3v-7H8v-3h2.5V8A3.5 3.5 0 0114 4.5h5V8z"/></svg>
+                                <span class="sr-only">Share on Facebook</span>
+                            </a>
+                            <a href="https://twitter.com/intent/tweet?url=YOUR_EVENT_URL&text=Join%20us%20for%20the%20Youth%20Summer%20Hangout%20at%20@YourChurch!" target="_blank" class="text-blue-400 dark:text-blue-300 hover:text-blue-600 dark:hover:text-blue-200 transition duration-300">
+                                <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M23.953 4.57c-.886.38-1.88.637-2.903.753a4.914 4.914 0 002.164-2.724c-.951.564-2.005.974-3.127 1.195a4.914 4.914 0 00-8.384 4.498C5.234 8.79 2.87 7.42 1.144 5.48c-.5.877-.783 1.89-.783 2.978 0 1.91.976 3.597 2.464 4.588a4.898 4.898 0 01-2.223-.616c-.006.023-.006.046-.006.07 0 2.628 1.872 4.822 4.35 5.305a4.918 4.918 0 01-2.227.084c.691 2.16 2.695 3.737 5.067 3.78A9.831 9.831 0 002 22.954c2.259 1.449 4.925 2.296 7.77 2.296 9.327 0 14.425-7.712 14.425-14.426 0-.22-.005-.438-.014-.653a10.38 10.38 0 002.55-2.647l-.001-.001z"/></svg>
+                                <span class="sr-only">Share on X (Twitter)</span>
+                            </a>
+                            <a href="mailto:?subject=Check%20out%20this%20Youth%20Summer%20Hangout!&body=Hi%20there,%0A%0AI%20thought%20you%20might%20be%20interested%20in%20this%20event%20at%20our%20church:%20Youth%20Summer%20Hangout%20on%20June%208th.%0A%0ALearn%20more%20here:%20YOUR_EVENT_URL" class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 transition duration-300">
+                                <svg class="h-10 w-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                <span class="sr-only">Share via Email</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold text-center text-indigo-700 dark:text-indigo-400 mb-10">You Might Also Like</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:shadow-lg transition duration-300 ease-in-out animate-fade-in delay-300">
+                        <img src="https://via.placeholder.com/600x300/4f46e5/ffffff?text=Community+Food+Drive" alt="Community Food Drive" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Community Food Drive</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                                Sunday, June 15, 2025 | 9:00 AM - 1:00 PM<br>
+                                Church Parking Lot | Category: Service
+                            </p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                                Help us collect non-perishable food items for local families in need.
+                            </p>
+                            <a href="/events/community-food-drive-jun-15" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:shadow-lg transition duration-300 ease-in-out animate-fade-in delay-400">
+                        <img src="https://via.placeholder.com/600x300/4f46e5/ffffff?text=Midweek+Bible+Study" alt="Midweek Bible Study" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Midweek Bible Study (Acts)</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                                Thursday, July 3, 2025 | 7:00 PM - 8:30 PM<br>
+                                Fellowship Hall & Zoom | Category: Bible Study
+                            </p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                                Dive deeper into God's Word with our ongoing study of the Book of Acts.
+                            </p>
+                            <a href="/events/midweek-bible-study-jul-03" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
+                        </div>
+                    </div>
+
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:shadow-lg transition duration-300 ease-in-out animate-fade-in delay-500">
+                        <img src="https://via.placeholder.com/600x300/4f46e5/ffffff?text=Annual+Church+Picnic" alt="Annual Church Picnic" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Annual Church Picnic</h3>
+                            <p class="text-gray-600 dark:text-gray-400 text-sm mb-3">
+                                Sunday, July 20, 2025 | 12:00 PM - 4:00 PM<br>
+                                City Park Recreation Area | Category: Community
+                            </p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-2">
+                                Fun for the whole family! Enjoy food, games, and fellowship.
+                            </p>
+                            <a href="/events/annual-church-picnic-jul-20" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">View Details</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-100 text-gray-600 py-10 mt-16 dark:bg-gray-900 dark:text-gray-400">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Jesus Restoration Center(JRC). All rights reserved.</p>
+            <p class="mt-2">
+                <a href="/privacy" class="hover:text-indigo-500 dark:hover:text-indigo-300">Privacy Policy</a> |
+                <a href="/terms" class="hover:text-indigo-500 dark:hover:text-indigo-300">Terms of Service</a>
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggleEmoji = document.querySelectorAll('.theme-toggle-emoji');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggleEmoji.forEach(button => button.textContent = '🌙');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeToggleEmoji.forEach(button => button.textContent = '☀️');
+            }
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        }
+
+        // Apply saved theme on page load
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (prefersDark) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+
+        // Add event listeners to both emoji buttons
+        themeToggleEmoji.forEach(button => {
+            button.addEventListener('click', toggleDarkMode);
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js" integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO" crossorigin="anonymous"></script>
+</body>
+</html>

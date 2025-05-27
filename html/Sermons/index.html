@@ -1,0 +1,187 @@
+        <section class="bg-indigo-700 dark:bg-indigo-900 text-white py-20 text-center">
+            <div class="container mx-auto px-4">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4">Sermons Archive</h1>
+                <p class="text-lg sm:text-xl max-w-2xl mx-auto">
+                    Dive into our comprehensive collection of inspiring messages, teachings, and biblical insights.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200">
+            <div class="container mx-auto px-4">
+                <form id="sermon-filter-form" hx-get="/api/sermons" hx-target="#sermon-list" hx-indicator="#sermon-loading-indicator" hx-swap="innerHTML transition:true">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                        <div>
+                            <label for="search-sermons" class="sr-only">Search Sermons</label>
+                            <input type="search" id="search-sermons" name="search" placeholder="Search by title, speaker, or keyword..."
+                                   class="w-full p-3 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500
+                                          bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                   hx-trigger="keyup changed delay:500ms, search">
+                        </div>
+
+                        <select id="filter-series" name="series"
+                                class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                hx-trigger="change">
+                            <option value="">All Series</option>
+                            <option value="Living in Grace">Living in Grace</option>
+                            <option value="Foundations of Faith">Foundations of Faith</option>
+                            <option value="Psalms of Hope">Psalms of Hope</option>
+                            <option value="Book of John">Book of John</option>
+                            <option value="Proverbs for Life">Proverbs for Life</option>
+                        </select>
+                        <select id="filter-speaker" name="speaker"
+                                class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                hx-trigger="change">
+                            <option value="">All Speakers</option>
+                            <option value="Pastor George Mukabwa">Pastor George Mukabwa</option>
+                            <option value="Guest Speaker Pastor Janet mukabwa">Guest Speaker Pastor Janet mukabwa</option>
+                            <option value="Elder Pastor Benson Lwack">Elder Pastor Benson Lwack</option>
+                            <option value="Deaconess Alice Brown">Deaconess Alice Brown</option>
+                        </select>
+                        <select id="filter-topic" name="topic"
+                                class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                hx-trigger="change">
+                            <option value="">All Topics</option>
+                            <option value="Forgiveness">Forgiveness</option>
+                            <option value="Purpose">Purpose</option>
+                            <option value="Faith">Faith</option>
+                            <option value="Love">Love</option>
+                            <option value="Hope">Hope</option>
+                            <option value="Community">Community</option>
+                            <option value="Prayer">Prayer</option>
+                            <option value="Discipleship">Discipleship</option>
+                        </select>
+                    </div>
+
+                    <div class="flex flex-col md:flex-row justify-between items-center mb-8 gap-4">
+                        <div class="flex flex-wrap gap-4">
+                            <select id="filter-year" name="year"
+                                    class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                    hx-trigger="change">
+                                <option value="">All Years</option>
+                                <option value="2025">2025</option>
+                                <option value="2024">2024</option>
+                                <option value="2023">2023</option>
+                                <option value="2022">2022</option>
+                                <option value="2021">2021</option>
+                            </select>
+
+                            <select id="sort-by" name="sort"
+                                    class="p-3 border border-gray-300 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100"
+                                    hx-trigger="change">
+                                <option value="date_desc">Newest First</option>
+                                <option value="date_asc">Oldest First</option>
+                                <option value="title_asc">Title (A-Z)</option>
+                                <option value="title_desc">Title (Z-A)</option>
+                                <option value="speaker_asc">Speaker (A-Z)</option>
+                            </select>
+
+                            <button type="button" class="bg-gray-300 dark:bg-gray-600 text-gray-800 dark:text-gray-200 py-3 px-6 rounded-md hover:bg-gray-400 dark:hover:bg-gray-500 transition duration-300"
+                                    onclick="clearSermonFilters()">
+                                Clear Filters
+                            </button>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <span class="text-gray-700 dark:text-gray-300">View:</span>
+                            <button type="button" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+                                    onclick="setView('grid')" id="grid-view-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z" />
+                                </svg>
+                            </button>
+                            <button type="button" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300"
+                                    onclick="setView('list')" id="list-view-btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 10h16M4 14h16M4 18h16" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
+                <div id="sermon-loading-indicator" class="htmx-indicator text-center text-indigo-600 dark:text-indigo-400 text-lg mb-4">
+                    <div class="flex items-center justify-center space-x-2">
+                        <svg class="animate-spin h-5 w-5 text-indigo-600 dark:text-indigo-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                        </svg>
+                        <span>Loading sermons...</span>
+                    </div>
+                </div>
+
+                <div id="sermon-list" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+                     hx-get="/api/sermons"
+                     hx-trigger="load"
+                     hx-swap="innerHTML transition:true">
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 fade-in sermon-card">
+                        <img src="https://via.placeholder.com/400x250/4f46e5/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6 sermon-content">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">The Power of Forgiveness</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 26, 2025</p>
+                            <p class="text-indigo-500 text-sm font-medium mb-3">Series: Living in Grace | Topic: Forgiveness</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 sermon-description">A powerful message on understanding and embracing the liberating power of forgiveness in our lives, inspired by biblical teachings.</p>
+                            <div class="sermon-actions">
+                                <a href="/sermons/the-power-of-forgiveness" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 fade-in sermon-card">
+                        <img src="https://via.placeholder.com/400x250/10b981/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6 sermon-content">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Living a Life of Purpose</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Guest Speaker Pastor Janet mukabwa | May 19, 2025</p>
+                            <p class="text-indigo-500 text-sm font-medium mb-3">Series: Foundations of Faith | Topic: Purpose</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 sermon-description">Explore how to identify and live out your unique purpose, aligning your daily actions with God's calling.</p>
+                            <div class="sermon-actions">
+                                <a href="/sermons/living-a-life-of-purpose" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 fade-in sermon-card">
+                        <img src="https://via.placeholder.com/400x250/ef4444/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
+                        <div class="p-6 sermon-content">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Faith in Challenging Times</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 12, 2025</p>
+                            <p class="text-indigo-500 text-sm font-medium mb-3">Series: Psalms of Hope | Topic: Faith</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3 sermon-description">A comforting message on how to maintain unwavering faith and find peace amidst life's trials and tribulations.</p>
+                            <div class="sermon-actions">
+                                <a href="/sermons/faith-in-challenging-times" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300">Listen Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 text-center"
+                     hx-get="/api/sermons/pagination"
+                     hx-trigger="load"
+                     hx-swap="innerHTML">
+                    <nav class="flex justify-center items-center space-x-2">
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">&laquo; Previous</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-white bg-indigo-600 dark:bg-indigo-500">1</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">2</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">3</a>
+                        <a href="#" class="px-4 py-2 border border-gray-300 rounded-md text-gray-700 dark:text-gray-300 bg-white dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">Next &raquo;</a>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-indigo-600 dark:bg-indigo-700 text-white py-12 text-center">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-4">Subscribe to Our Podcast!</h2>
+                <p class="text-lg mb-6 max-w-xl mx-auto">
+                    Take our sermons with you on the go. Available on all major podcast platforms.
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <a href="#" class="inline-block bg-white text-indigo-700 py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+                        Apple Podcasts
+                    </a>
+                    <a href="#" class="inline-block bg-white text-indigo-700 py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+                        Spotify
+                    </a>
+                    <a href="#" class="inline-block bg-white text-indigo-700 py-2 px-6 rounded-full font-semibold hover:bg-gray-200 transition duration-300">
+                        Google Podcasts
+                    </a>
+                </div>
+            </div>
+        </section>

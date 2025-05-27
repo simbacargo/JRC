@@ -1,0 +1,59 @@
+
+<header class="bg-white dark:bg-gray-900 shadow-md dark:shadow-none">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex-shrink-0">
+                <a href="/" class="text-xl font-bold text-indigo-700 dark:text-indigo-500 tracking-tight">Jesus Restoration Center(JRC)</a>
+            </div>
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out"  hx-get="/about" hx-target="#main" hx-indicator="#loading">About Us</a>
+                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out" hx-get="/ministries" hx-target="#main" hx-indicator="#loading">Ministries</a>
+                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out" hx-get="/sermons" hx-target="#main" hx-indicator="#loading">Sermons</a>
+                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out" hx-get="/calendar" hx-target="#main" hx-indicator="#loading">Events</a>
+                <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out" hx-get="/contact" hx-target="#main" hx-indicator="#loading">Contact</a>
+                <a href="#" class="bg-indigo-600 text-white dark:bg-indigo-500 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-indigo-700 dark:hover:bg-indigo-400 transition duration-150 ease-in-out" hx-get="/give" hx-target="#main" hx-indicator="#loading">Give</a>
+                <button class="focus:outline-none ml-4 theme-toggle-emoji">
+                    ☀️
+                </button>
+            </div>
+            <div class="md:hidden flex items-center">
+                <button class="focus:outline-none mr-4 theme-toggle-emoji">
+                    ☀️
+                </button>
+                <button id="mobile-menu-button" class="focus:outline-none">
+                    <svg class="h-6 w-6 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
+                        <path fill-rule="evenodd" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" clip-rule="evenodd" />
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        <div class="md:hidden hidden dark:bg-gray-800" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out" hx-get="/about" hx-target="#main">About Us</a>
+                <a href="/ministries" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Ministries</a>
+                <a href="/sermons" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Sermons</a>
+                <a href="/events" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Events</a>
+                <a href="/contact" class="block bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 py-2 px-3 rounded-md text-base font-medium hover:bg-gray-200 dark:hover:bg-gray-600 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out">Contact</a>
+                <a href="/give" class="block bg-indigo-600 dark:bg-indigo-500 text-white dark:text-gray-900 py-2 px-3 rounded-md text-base font-medium hover:bg-indigo-700 dark:hover:bg-indigo-400 transition duration-150 ease-in-out">Give</a>
+            </div>
+        </div>
+        {% csrf_token %}
+        <script>
+            function getCSRFToken() {
+    return document.querySelector('[name=csrfmiddlewaretoken]').value;
+}
+
+fetch('/register_visit/', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',
+        'X-CSRFToken': getCSRFToken()  // Include CSRF token
+    },
+    body: JSON.stringify({
+        screen_resolution: `${window.screen.width}x${window.screen.height}`
+    })
+})
+.then(response => response.json())
+.then(data => console.log(data));
+
+        </script>
+    </header>

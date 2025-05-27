@@ -1,0 +1,157 @@
+<footer class="bg-gray-100 text-gray-600 py-16 mt-16 dark:bg-gray-900 dark:text-gray-400">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-10 gap-x-8">
+            <div class="lg:col-span-2">
+                <a href="/" class="text-2xl font-bold text-indigo-700 dark:text-indigo-500 tracking-tight mb-4 block">JRC</a>
+                <p class="text-sm mb-2 text-gray-700 dark:text-gray-300">Kirumba</p>
+                <p class="text-sm mb-2 text-gray-700 dark:text-gray-300">Mwanza, Tanzania</p>
+                <p class="text-sm mb-2 text-gray-700 dark:text-gray-300">Email: <a href="mailto:info@jrc.co.tz" class="hover:text-indigo-500 dark:hover:text-indigo-300">info@jrc.co.tz</a></p>
+                <p class="text-sm text-gray-700 dark:text-gray-300">Phone: <a href="tel:+255 788 353 007" class="hover:text-indigo-500 dark:hover:text-indigo-300">+255 788 353 007</a></p>
+
+                <div class="flex space-x-4 mt-6">
+                    <a href="https://facebook.com/yourchurch" target="_blank" rel="noopener noreferrer" aria-label="Facebook" class="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition duration-300">
+                        <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://twitter.com/yourchurch" target="_blank" rel="noopener noreferrer" aria-label="Twitter" class="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition duration-300">
+                        <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c-1.41 0-2.73-.413-3.92-1.196 1.83.119 3.65-.138 5.37-1.144-.9-.057-1.74-.326-2.52-.779.62.096 1.2.062 1.77-.105-.97-.245-1.74-.78-2.22-1.65-.057-.109-.104-.224-.157-.333.27.027.53.037.8.037-.99-.613-1.67-1.61-1.92-2.73.26.046.52.067.78.067-.99-.613-1.67-1.61-1.92-2.73-.057-.109-.104-.224-.157-.333.27.027.53.037.8.037-1.22-1.57-2.12-3.41-2.12-5.52C4 3.73 4 3.49 4 3.25c.34.037.67.086 1.01.14-.9-.57-1.54-1.39-1.93-2.36.87.126 1.76.248 2.67.36.81-.84 1.89-1.39 3.09-1.39 1.48 0 2.82.78 3.52 1.94.97-.19 1.89-.54 2.74-.92-.32.99-.99 1.82-1.89 2.36.8.087 1.57-.01 2.3-.29-.44.97-1.09 1.82-1.93 2.58.006.136.007.27.007.406 0 4.47-3.47 8.12-7.85 8.12z" />
+                        </svg>
+                    </a>
+                    <a href="https://instagram.com/yourchurch" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition duration-300">
+                        <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12 5C8.13 5 5 8.13 5 12s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7zm-4.32 7c-.01 2.05 1.66 3.72 3.72 3.73h.01c2.05-.01 3.72-1.66 3.73-3.72s-1.66-3.72-3.72-3.73h-.01c-2.05.01-3.72 1.66-3.73 3.72zm11.75-6.5C18.25 4.3 17.7 3.75 17.06 3.75h-.01c-.65 0-1.2.55-1.2 1.2s.55 1.2 1.2 1.2h.01c.65 0 1.2-.55 1.2-1.2zm-3.8 8.84c.03-3.89-3.17-7.09-7.06-7.06-3.89.03-7.09 3.23-7.06 7.12.03 3.89 3.23 7.09 7.12 7.06 3.89-.03 7.09-3.23 7.06-7.12z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                    <a href="https://youtube.com/yourchurch" target="_blank" rel="noopener noreferrer" aria-label="YouTube" class="text-gray-600 hover:text-indigo-600 dark:text-gray-400 dark:hover:text-indigo-400 transition duration-300">
+                        <svg class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M19.612 5.06C19.123 4.417 18.307 4 17.382 4H6.618C5.693 4 4.877 4.417 4.388 5.06 3.9 5.702 3.75 6.58 3.75 8.25v7.5c0 1.67.15 2.548.638 3.19C4.877 19.583 5.693 20 6.618 20h10.764c.925 0 1.741-.417 2.23-1.06.488-.642.638-1.52.638-3.19V8.25c0-1.67-.15-2.548-.638-3.19zM15 12L10 9v6l5-3z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Ministries</h3>
+                <ul class="list-none p-0 space-y-2">
+                    <li><a href="/childrens-ministry" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Children's Ministry</a></li>
+                    <li><a href="/youth-ministry" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Youth Ministry</a></li>
+                    <li><a href="/adult-ministry" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Adult Small Groups</a></li>
+                    <li><a href="/outreach" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Local Outreach</a></li>
+                    <li><a href="/missions" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Global Missions</a></li>
+                    <li><a href="/volunteer" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Volunteer Opportunities</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Ways to Engage</h3>
+                <ul class="list-none p-0 space-y-2">
+                    <li><a href="/give" class="text-gray-600 hover:text-green-500 dark:text-gray-400 dark:hover:text-green-300 text-sm transition duration-200">Online Giving</a></li>
+                    <li><a href="/events" class="text-gray-600 hover:text-green-500 dark:text-gray-400 dark:hover:text-green-300 text-sm transition duration-200">Upcoming Events</a></li>
+                    <li><a href="/prayer" class="text-gray-600 hover:text-green-500 dark:text-gray-400 dark:hover:text-green-300 text-sm transition duration-200">Submit Prayer Request</a></li>
+                    <li><a href="/baptism" class="text-gray-600 hover:text-green-500 dark:text-gray-400 dark:hover:text-green-300 text-sm transition duration-200">Learn About Baptism</a></li>
+                    <li><a href="/membership" class="text-gray-600 hover:text-green-500 dark:text-gray-400 dark:hover:text-green-300 text-sm transition duration-200">Become a Member</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Resources</h3>
+                <ul class="list-none p-0 space-y-2">
+                    <li><a href="/sermons" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Sermon Archive</a></li>
+                    <li><a href="/bible-plan" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Bible Reading Plan</a></li>
+                    <li><a href="/devotionals" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Daily Devotionals</a></li>
+                    <li><a href="/articles" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Blog & Articles</a></li>
+                    <li><a href="/library" class="text-gray-600 hover:text-indigo-500 dark:text-gray-400 dark:hover:text-indigo-300 text-sm transition duration-200">Church Library</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">About Us</h3>
+                <ul class="list-none p-0 space-y-2">
+                    <li><a href="/our-story" class="text-gray-600 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-300 text-sm transition duration-200">Our Story & Vision</a></li>
+                    <li><a href="/leadership" class="text-gray-600 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-300 text-sm transition duration-200">Leadership & Staff</a></li>
+                    <li><a href="/beliefs" class="text-gray-600 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-300 text-sm transition duration-200">Our Core Beliefs</a></li>
+                    <li><a href="/statement-of-faith" class="text-gray-600 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-300 text-sm transition duration-200">Statement of Faith</a></li>
+                    <li><a href="/contact" class="text-gray-600 hover:text-teal-500 dark:text-gray-400 dark:hover:text-teal-300 text-sm transition duration-200">Contact Us & Directions</a></li>
+                </ul>
+            </div>
+
+            <div class="lg:col-span-2">
+                <h3 class="text-lg font-semibold mb-4 text-gray-800 dark:text-gray-200">Stay Connected</h3>
+                <p class="mb-3 text-sm text-gray-700 dark:text-gray-300">Sign up for our newsletter to get updates and news directly to your inbox:</p>
+                <form class="mt-2">
+                    <input type="text" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md mb-2 p-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100" placeholder="Your email address or phone number ">
+                    <button type="submit" class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 dark:bg-indigo-500 dark:hover:bg-indigo-400 transition duration-300">
+                        Subscribe
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <div class="mt-16 border-t border-gray-200 dark:border-gray-700 pt-8 text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>&copy; <span id="current-year"></span> Jesus Restoration Center (JRC). All rights reserved.</p>
+            <p class="mt-2">Designed with love in Mwanza.</p>
+            <div class="mt-4 flex flex-wrap justify-center gap-x-4 gap-y-2">
+                <a href="/privacy" class="hover:text-indigo-500 dark:hover:text-indigo-300 transition duration-200">Privacy Policy</a>
+                <span class="text-gray-400 dark:text-gray-600">|</span>
+                <a href="/terms" class="hover:text-indigo-500 dark:hover:text-indigo-300 transition duration-200">Terms of Service</a>
+                <span class="text-gray-400 dark:text-gray-600">|</span>
+                <a href="/accessibility" class="hover:text-indigo-500 dark:hover:text-indigo-300 transition duration-200">Accessibility Statement</a>
+                <span class="text-gray-400 dark:text-gray-600">|</span>
+                <a href="/site-map" class="hover:text-indigo-500 dark:hover:text-indigo-300 transition duration-200">Site Map</a>
+                <span class="text-gray-400 dark:text-gray-600">|</span>
+                <a href="/giving-transparency" class="hover:text-green-500 dark:hover:text-green-300 transition duration-200">Giving Transparency</a>
+                <span class="text-gray-400 dark:text-gray-600">|</span>
+                <a href="/affiliations" class="hover:text-green-500 dark:hover:text-green-300 transition duration-200">Denomination & Affiliations</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const themeToggleEmoji = document.querySelectorAll('.theme-toggle-emoji');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeToggleEmoji.forEach(button => button.textContent = '🌙');
+            } else {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeToggleEmoji.forEach(button => button.textContent = '☀️');
+            }
+        }
+
+        function toggleDarkMode() {
+            if (document.documentElement.classList.contains('dark')) {
+                setTheme('light');
+            } else {
+                setTheme('dark');
+            }
+        }
+
+        // Apply saved theme on page load
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        if (savedTheme) {
+            setTheme(savedTheme);
+        } else if (prefersDark) {
+            setTheme('dark');
+        } else {
+            setTheme('light');
+        }
+
+        // Add event listeners to both emoji buttons
+        themeToggleEmoji.forEach(button => {
+            button.addEventListener('click', toggleDarkMode);
+        });
+    </script>
