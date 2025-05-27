@@ -1,0 +1,83 @@
+# Byte-compiled / optimized files
+*.pyc
+*.pyo
+*.pyd
+__pycache__/
+
+# Virtual environments
+venv/
+.env/
+*.env
+pip-log.txt
+
+# Django-related files
+db.sqlite3
+*.db
+media/
+staticfiles/
+static/
+temp/
+uploads/
+
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# Django migrations (excluding __init__.py)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Security-related
+secret_key.txt
+*.pem
+
+# Editor and IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Node modules (for frontend dependencies)
+node_modules/
+bower_components/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+
+# Compiled translation files
+*.mo
+
+# Cache files
+*.cache
+__pycache__/
+
+# Local settings and sensitive files
+settings_local.py
+config.json
+credentials.json
+
+# Testing & CI/CD related
+junit.xml
+.nox/
+.tox/
+.coverage
+.pytest_cache/
+nosetests.xml
+*.log
+
+# Deployment and containerization
+Dockerfile
+docker-compose.yml
+*.docker
+*.dockerenv
+dist/
+build/
+
+# System-specific files
+.DS_Store
+Thumbs.db
+Desktop.ini
