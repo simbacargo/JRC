@@ -11,14 +11,18 @@
                     <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out" hx-get="/calendar" hx-target="#main" hx-indicator="#loading">Events</a>
                     <a href="#" class="text-gray-700 dark:text-gray-300 hover:text-indigo-500 dark:hover:text-indigo-400 transition duration-150 ease-in-out" hx-get="/contact" hx-target="#main" hx-indicator="#loading">Contact</a>
                     <a href="#" class="bg-indigo-600 text-white dark:bg-indigo-500 dark:text-gray-900 py-2 px-4 rounded-md hover:bg-indigo-700 dark:hover:bg-indigo-400 transition duration-150 ease-in-out" hx-get="/give" hx-target="#main" hx-indicator="#loading">Give</a>
+                    {% comment "These Will be added later" %}
                     <button class="focus:outline-none ml-4 theme-toggle-emoji">
                         ☀️
                     </button>
+{% endcomment %}
                 </div>
                 <div class="md:hidden flex items-center">
+                    {% comment %}
                     <button class="focus:outline-none mr-4 theme-toggle-emoji">
                         ☀️
                     </button>
+{% endcomment %}
                     <button id="mobile-menu-button" class="focus:outline-none">
                         <svg class="h-6 w-6 fill-current text-gray-700 dark:text-gray-300" viewBox="0 0 24 24">
                             <path fill-rule="evenodd" d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" clip-rule="evenodd" />
