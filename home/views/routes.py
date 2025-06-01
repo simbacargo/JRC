@@ -8,7 +8,7 @@ def about(req):
     return render (req, "about.html")
 
 def calendar(req):
-    return render (req, "calendar/index.html")
+    return render (req, "Calendar/index.html")
 
 def event_details(req):
     return render (req, "home.html")
