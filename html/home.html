@@ -24,9 +24,10 @@
         <section class="py-16 bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200">
             <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
                 <div class="text-left animate-fade-in-up">
-                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">Welcome to Our Family</h2>
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-6 text-indigo-700 dark:text-indigo-400">
+                        Welcome to Our Family</h2>
                     <p class="text-lg leading-relaxed mb-6">
-                        At <b>Jesus Restoration Center(JRC)</b>, we believe in creating a welcoming and inclusive space for everyone to grow in their faith journey. Whether you're new to church, exploring Christianity, or looking for a community to call home, you are welcome here.
+                        {{welcome_message|safe}}
                     </p>
                     <p class="text-lg leading-relaxed mb-8">
                         We are passionate about living out God's love, serving our city, and sharing the message of hope. Join us this Sunday and experience a vibrant community rooted in faith and fellowship.
@@ -143,8 +144,8 @@
                     Mark your calendars and join us for fellowship, learning, and celebration!
                 </p>
                 <div id="events-container"
-                     hx-get="/api/upcoming-events"
-                     hx-trigger="load, every 30s"
+                     hx-get="/api/upcoming_events"
+                     hx-trigger="load, every 10s"
                      hx-swap="innerHTML"
                      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up">
@@ -192,15 +193,15 @@
                     Listen to powerful messages that inspire, challenge, and encourage your walk with Christ.
                 </p>
                 <div id="sermons-container"
-                     hx-get="/api/recent-sermons"
-                     hx-trigger="load, every 60s"
+                     hx-get="/api/recent-sermosns"
+                     hx-trigger="load, every 160s"
                      hx-swap="innerHTML"
                      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up">
                         <img src="https://placehold.co/400x250/4f46e5/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">The Power of Forgiveness</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 26, 2025</p>
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Fahamu Kuhusu Vita Vya Kiroho</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | Jan 26, 2025</p>
                             <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">A powerful message on understanding and embracing the liberating power of forgiveness in our lives, inspired by biblical teachings.</p>
                             <a href="#/sermons/power-of-forgiveness" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300" onclick="alert('Page under construction')">Listen Now</a>
                         </div>
@@ -208,8 +209,8 @@
                     <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-100">
                         <img src="https://placehold.co/400x250/10b981/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Living a Life of Purpose</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-2">Guest Speaker Pastor Janet mukabwa | May 19, 2025</p>
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">FAHAMU SIRI YA MUDA WAKO BINAFSI NA MUNGU </h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa</p>
                             <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">Explore how to identify and live out your unique purpose, aligning your daily actions with God's calling.</p>
                             <a href="#/sermons/life-of-purpose" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300" onclick="alert('Page under construction')">Listen Now</a>
                         </div>
@@ -217,8 +218,8 @@
                     <div class="bg-gray-50 dark:bg-gray-700 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-200">
                         <img src="https://placehold.co/400x250/ef4444/ffffff?text=Sermon+Thumbnail" alt="Sermon Title" class="w-full h-48 object-cover">
                         <div class="p-6">
-                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Faith in Challenging Times</h3>
-                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa | May 12, 2025</p>
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">JINSI YA KUTEMBEA KATIKA BARAKA</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Pastor George Mukabwa</p>
                             <p class="text-gray-700 dark:text-gray-300 mb-4 line-clamp-3">A comforting message on how to maintain unwavering faith and find peace amidst life's trials and tribulations.</p>
                             <a href="#/sermons/faith-in-challenge" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300" onclick="alert('Page under construction')">Listen Now</a>
                         </div>

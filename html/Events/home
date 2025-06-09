@@ -1,0 +1,27 @@
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up">
+                        <img src="https://placehold.co/400x250/6366f1/ffffff?text=Event+Image" alt="Event Name" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Community Prayer Night</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Friday, June 7th, 2025 | 7:00 PM</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Join us for an evening of prayer and reflection, seeking guidance and strength together.</p>
+                            <a href="#/events/prayer-night" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300"  onclick="alert('Page under construction')">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-100">
+                        <img src="https://placehold.co/400x250/f97316/ffffff?text=Youth+Group" alt="Event Name" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Youth Summer Camp</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">July 15-19, 2025 | Church Grounds</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">A week of fun, fellowship, and spiritual growth for our youth. Sign up now!</p>
+                            <a href="#/events/youth-camp" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300"  onclick="alert('Page under construction')">Learn More</a>
+                        </div>
+                    </div>
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-200">
+                        <img src="https://placehold.co/400x250/22c55e/ffffff?text=Community+Service" alt="Event Name" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">Community Outreach Day</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">Saturday, June 22nd, 2025 | 9:00 AM</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">Join us as we serve our local community through various projects.</p>
+                            <a href="#/events/outreach" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300"  onclick="alert('Page under construction')">Learn More</a>
+                        </div>
+                    </div>

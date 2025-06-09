@@ -1,0 +1,12 @@
+{% for i in events %}
+    
+                    <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden transform hover:scale-105 transition duration-300 animate-fade-in-up delay-200">
+                        <img src="{{i.image_text}}" alt="{{i.title}}" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-xl font-semibold text-indigo-700 dark:text-indigo-400 mb-2">{{i.title}}</h3>
+                            <p class="text-gray-600 dark:text-gray-400 mb-2">{{i.date}}</p>
+                            <p class="text-gray-700 dark:text-gray-300 mb-4">{{i.description}}</p>
+                            <a href="#/events/outreach" class="inline-block bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-700 transition duration-300"  onclick="alert('Page under construction')">Learn More</a>
+                        </div>
+                    </div>
+{% endfor %}

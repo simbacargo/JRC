@@ -1,9 +1,11 @@
 
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from home.views.more import *
 from home.views.routes import *
 urlpatterns = [
+    # path('jet/', include('jet.urls', 'jet')),  # Django JET URLS
+    # path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),  # Django JET dashboard URLS
     path('admin/', admin.site.urls),
     path('', index),
     path('about', about),
@@ -16,7 +18,15 @@ urlpatterns = [
     path('home', home),
     path('ministries', ministries),
     path('prayer_requests', prayer_requests),
-    path('test', test),
+    path('api/recent-sermons', recent_sermons),
+    path('api/beliefs', beliefs),
+    path('api/upcoming_events', upcoming_events),
+    path('api/upcoming_events', upcoming_events),
+    path('api/upcoming_events', upcoming_events),
+    path('api/upcoming_events', upcoming_events),
+    path('api/upcoming_events', upcoming_events),
+    path('api/upcoming_events', upcoming_events),
+
 ]
 
 
